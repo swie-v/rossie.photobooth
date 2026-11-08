@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hello Kitty Photobooth</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Welcome Page -->
+    <main class="welcome-page">
+
+        <div class="decorations">
+            <span>🎀</span>
+            <span>💗</span>
+            <span>✨</span>
+            <span>🎀</span>
+            <span>💖</span>
+        </div>
+
+        <section class="welcome-content">
+
+            <div class="text-content">
+                <p class="small-title">HELLO KITTY PHOTOBOOTH</p>
+
+                <h1>Sweet Snap<br>Photobooth</h1>
+
+                <p class="subtitle">
+                    Capture your sweetest memories! 📸
+                </p>
+
+                <button id="startBtn">
+                    📸 START
+                </button>
+            </div>
+
+            <div class="kitty-box">
+                <div class="kitty-circle">
+                    🎀
+                    <div class="camera">📸</div>
+                    ✨
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Camera Page -->
+    <section class="camera-page" id="cameraPage">
+
+        <div class="camera-container">
+
+            <p class="small-title">01 / TAKE YOUR PHOTOS</p>
+
+            <h2>Ready, set, smile! 📸</h2>
+
+            <p class="camera-subtitle">
+                Take 3 cute photos for your photostrip!
+            </p>
+
+            <div class="video-box">
+                <video id="video" autoplay playsinline></video>
+
+                <!-- SIMPLE COUNTDOWN -->
+                <div id="countdown"></div>
+
+                <div class="camera-placeholder" id="cameraPlaceholder">
+                    📸
+                    <p>Your camera will appear here!</p>
+                </div>
+            </div>
+
+            <div class="camera-buttons">
+                <button id="captureBtn">📸 CAPTURE</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Photo Strip Page -->
+    <section class="strip-page" id="stripPage">
+
+        <div class="strip-container">
+
+            <p class="small-title">02 / A LITTLE EXTRA CUTE</p>
+
+            <h2>Make it your kind of sweet.</h2>
+
+            <p class="decorate-subtitle">
+                Pick a frame, sprinkle on some stickers, and let your personality shine.
+            </p>
+
+            <!-- Hello Kitty Photo Strip -->
+            <div class="photo-strip" id="photoStrip">
+
+                <div class="strip-header">
+                    <h3>HELLO KITTY</h3>
+                    <p>Sweet Snap Photobooth 🎀</p>
+                </div>
+
+                <div id="photosContainer"></div>
+
+                <div class="strip-footer">
+                    <p>♡ Sweet Memories ♡</p>
+                </div>
+
+            </div>
+
+            <!-- Download Button -->
+            <button id="downloadBtn">💗 DOWNLOAD PHOTO STRIP</button>
+
+            <!-- Frame Color Options -->
+            <div class="frame-options">
+
+                <h3>CHOOSE YOUR FRAME COLOR 🎀</h3>
+
+                <div class="frame-buttons">
+
+                    <button class="frame-btn active" data-frame="pink">
+                        💗 Pink
+                    </button>
+
+                    <button class="frame-btn" data-frame="lavender">
+                        💜 Lavender
+                    </button>
+
+                    <button class="frame-btn" data-frame="blue">
+                        🩵 Baby Blue
+                    </button>
+
+                    <button class="frame-btn" data-frame="yellow">
+                        💛 Pastel Yellow
+                    </button>
+
+                    <button class="frame-btn" data-frame="white">
+                        🤍 White
+                    </button>
+
+                    <button class="frame-btn" data-frame="hotpink">
+                        💖 Hot Pink
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Decoration Options -->
+            <div class="decoration-options">
+
+                <h3>ADD SOME CUTENESS ✨</h3>
+
+                <div class="sticker-buttons">
+
+                    <button class="sticker-btn" data-sticker="images/kitty1.png">
+                        <img src="images/kitty1.png" alt="Hello Kitty sticker 1">
+                    </button>
+
+                    <button class="sticker-btn" data-sticker="images/kitty2.png">
+                        <img src="images/kitty2.png" alt="Hello Kitty sticker 2">
+                    </button>
+
+                    <button class="sticker-btn" data-sticker="images/kitty3.png">
+                        <img src="images/kitty3.png" alt="Hello Kitty sticker 3">
+                    </button>
+
+                    <button class="sticker-btn" data-sticker="images/kitty4.png">
+                        <img src="images/kitty4.png" alt="Hello Kitty sticker 4">
+                    </button>
+
+                </div>
+
+            </div>
+
+            <button id="retakeBtn">🔄 RETAKE PHOTOS</button>
+
+        </div>
+
+    </section>
+
+    <!-- Download Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

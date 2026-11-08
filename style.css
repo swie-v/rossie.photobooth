@@ -1,0 +1,496 @@
+/* GENERAL SETTINGS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff5f8;
+  color: #6b3b4a;
+}
+
+/* WELCOME PAGE */
+.welcome-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff0f5, #ffdce8);
+  overflow: hidden;
+  position: relative;
+}
+
+.decorations {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 35px;
+  opacity: 0.9;
+}
+
+.welcome-content {
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.text-content {
+  max-width: 500px;
+}
+
+.small-title {
+  color: #e75480;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 65px;
+  line-height: 1;
+  color: #7b3f52;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #9b6373;
+}
+
+#startBtn {
+  border: none;
+  background: #e75480;
+  color: white;
+  padding: 16px 38px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(231, 84, 128, 0.25);
+  transition: 0.3s;
+}
+
+#startBtn:hover {
+  transform: scale(1.05);
+  background: #d94270;
+}
+
+.kitty-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kitty-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #ffd6e4;
+  border: 10px solid #fff;
+  box-shadow: 0 15px 35px rgba(150, 70, 100, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  position: relative;
+}
+
+.camera {
+  font-size: 100px;
+  position: absolute;
+}
+
+/* CAMERA PAGE */
+.camera-page {
+  display: none;
+  min-height: 100vh;
+  background: #fff5f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.camera-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.camera-page h2 {
+  font-size: 42px;
+  color: #7b3f52;
+  margin: 15px 0;
+}
+
+.camera-subtitle {
+  color: #9b6373;
+  margin-bottom: 25px;
+  font-size: 17px;
+}
+
+.video-box {
+  width: 100%;
+  max-width: 650px;
+  height: 400px;
+  margin: auto;
+  background: #ffd6e4;
+  border: 8px solid white;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(150, 70, 100, 0.15);
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.camera-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: #9b6373;
+}
+
+.camera-placeholder p {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.camera-buttons {
+  margin-top: 25px;
+}
+
+#captureBtn {
+  border: none;
+  background: #e75480;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* PHOTO STRIP PAGE */
+.strip-page {
+  display: none;
+  min-height: 100vh;
+  background: #fff0f5;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.strip-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.strip-page h2 {
+  color: #7b3f52;
+  font-size: 38px;
+  margin-bottom: 25px;
+}
+
+.decorate-subtitle {
+  color: #9b6373;
+  margin-bottom: 25px;
+}
+
+/* THE SPARKLY PHOTO STRIP FRAME */
+.photo-strip {
+  --sparkle-color: #e75480;
+  --frame-color: #ffb6d2;
+
+  width: 320px;
+  margin: 35px auto 40px;
+  background: white;
+  padding: 18px;
+  border-radius: 20px;
+  position: relative;
+  border: 5px solid var(--frame-color);
+  outline: 3px dashed #ffe0ec;
+  outline-offset: 5px;
+  box-shadow:
+    0 0 10px var(--frame-color),
+    0 0 20px rgba(255, 105, 180, 0.3),
+    0 10px 30px rgba(150, 70, 100, 0.2);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* TOP SPARKLES AND RIBBON */
+.photo-strip::before {
+  content: "✨ 🎀 ✨";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 23px;
+  white-space: nowrap;
+  z-index: 10;
+  filter: drop-shadow(0 2px 4px var(--sparkle-color));
+}
+
+/* BOTTOM HEART DECORATION */
+.photo-strip::after {
+  content: "✧  ♡  ✧";
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--sparkle-color);
+  font-size: 23px;
+  white-space: nowrap;
+  z-index: 10;
+  text-shadow: 0 0 8px var(--frame-color);
+}
+
+/* STRIP HEADER */
+.strip-header {
+  background: #ffd6e4;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.strip-header h3 {
+  color: #e75480;
+  font-size: 24px;
+}
+
+.strip-header p {
+  color: #9b6373;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* CAPTURED PHOTOS */
+#photosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#photosContainer img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+.strip-footer {
+  margin-top: 15px;
+  color: #e75480;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.strip-footer p {
+  margin: 5px 0;
+}
+
+/* FRAME COLOR OPTIONS */
+.frame-options {
+  margin: 35px auto;
+  max-width: 500px;
+}
+
+.frame-options h3 {
+  color: #7b3f52;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+/* FRAME COLOR BUTTONS */
+.frame-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.frame-btn {
+  border: 2px solid #ffc5dc;
+  background: #fff5f9;
+  color: #9b6373;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(150, 70, 100, 0.08);
+}
+
+.frame-btn:hover {
+  transform: translateY(-3px);
+  background: #ffe1ed;
+}
+
+/* SELECTED FRAME COLOR */
+.frame-btn.active {
+  background: #e75480;
+  color: white;
+  border-color: #e75480;
+  box-shadow: 0 5px 15px rgba(231, 84, 128, 0.3);
+  transform: scale(1.05);
+}
+
+/* DECORATION OPTIONS */
+.decoration-options {
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+.decoration-options h3 {
+  color: #7b3f52;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+/* HELLO KITTY IMAGE STICKERS */
+.sticker-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sticker-btn {
+  width: 100px;
+  height: 100px;
+  padding: 8px;
+  border: 2px solid #ffc5dc;
+  border-radius: 20px;
+  background: #fff5f9;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 12px rgba(150, 70, 100, 0.1);
+}
+
+.sticker-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sticker-btn:hover {
+  transform: scale(1.12);
+  background: #ffe1ed;
+  box-shadow: 0 5px 15px rgba(255, 150, 190, 0.3);
+}
+
+/* ADDED STICKERS ON PHOTO STRIP */
+.added-sticker {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* RETAKE BUTTON */
+#retakeBtn {
+  border: none;
+  background: #e75480;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#retakeBtn:hover {
+  background: #d94270;
+}
+
+/* DOWNLOAD PHOTO STRIP BUTTON */
+#downloadBtn {
+  border: none;
+  background: #e75480;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px auto 25px;
+  box-shadow: 0 5px 15px rgba(231, 84, 128, 0.25);
+}
+
+#downloadBtn:hover {
+  background: #d94270;
+  transform: scale(1.05);
+}
+
+/* MOBILE FRIENDLY */
+@media (max-width: 600px) {
+  .welcome-content {
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 35px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  .kitty-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .camera-page h2 {
+    font-size: 32px;
+  }
+
+  .strip-page h2 {
+    font-size: 30px;
+  }
+
+  .frame-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+/* SIMPLE SMALL CAMERA COUNTDOWN */
+#countdown {
+  position: absolute;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 3px 10px rgba(231, 84, 128, 0.7);
+  z-index: 5;
+  pointer-events: none;
+}
